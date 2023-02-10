@@ -1,5 +1,6 @@
 from flask import Blueprint, request
 
+
 shorten = Blueprint("shorten", __name__)
 
 
@@ -7,4 +8,5 @@ shorten = Blueprint("shorten", __name__)
 def shorten_url():
     url = request.form["url"]
     shorten_url = request.form["shorten_url"]
+
     return "<h1>This is a url shortener</h1>"
