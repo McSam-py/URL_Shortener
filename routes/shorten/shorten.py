@@ -14,19 +14,19 @@ def shorten_url():
     link_created = app_config.get_base_url() + slug
     user_id = str(uuid.uuid4())
 
-    url = Urls(user_id, url, link_created)
+    url_db = Urls(user_id, url, link_created)
     if "url" in session:
         print("user already has a session")
-        db_session.add(url)
+        db_session.add(url_db)
         db_session.commit()
         pass
     else:
         session.permanent = True
         session["url"] = url
-        db_session.add(url)
+        db_session.add(url_db)
         db_session.commit()
 
     # print(f"{url}\n{shorten_url}\n{session['url']}")
     return make_response(jsonify({
-        "link": f"{link_created}",
+        "link": f"{str(link_created)}",
     }), 201)
