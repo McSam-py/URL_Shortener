@@ -1,4 +1,4 @@
-from Flask import redirect, Blueprint
+from flask import redirect, Blueprint
 
 redirect = Blueprint("redirect", __name__)
 
