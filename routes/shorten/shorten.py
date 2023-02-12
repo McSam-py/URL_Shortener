@@ -28,7 +28,7 @@ def shorten_url():
     slug_in_db = db_session.query(Urls).filter(
         Urls.link_created == link_created).first()
 
-    if user_id:
+    if user_id is None:
         create_link(url_db, slug_in_db)
 
     else:
