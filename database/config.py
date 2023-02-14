@@ -1,7 +1,7 @@
 class Config:
     def __init__(self):
         self.db_url = "sqlite:///database.sqlite3"
-        self.base_url = "http://127.0.0.1:8000/"
+        self.base_url = "https://shortener-kx4e.onrender.com/"
         pass
 
     def get_db_url(self):
